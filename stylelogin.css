@@ -306,6 +306,16 @@ main.registroformulario .derechop{
     border-radius: 1rem;
 }
 
+select{
+    background: transparent;
+    
+    width: 100%;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+}
+
 @media(max-width: 850px){
     .box{
         height: auto;
