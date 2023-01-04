@@ -1,5 +1,5 @@
 <?php
-require './SSL/conexionphpazure.php';
+require 'conexionphpazure.php';
 session_start();
 
 $id = $_POST['identificacion'];
