@@ -13,8 +13,8 @@
         <div class="box">
             <div class="inner-box">
                 <div class="izquierdop">
-                    <form action="login.php" autocomplete="off" 
-                        class="loginformulario">
+                    <form action="loguear.php" autocomplete="off" 
+                        class="loginformulario" method="POST">
                         <div class="logo">
                             <img src="Logouni.png" alt="alertas">
                             <h4>Gestor de alertas</h4>
@@ -29,17 +29,17 @@
                         <div class="formularioactual">
                             <div class="entrada-wrap">
                                 <input type="text" 
-                                minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="identificacion"
                                 require/>
                                 <label>Ingresa tu Identificación</label>
                             </div>
                             <div class="entrada-wrap">
                                 <input type="password" 
-                                minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name = "contrasena"
                                 require/>
                                 <label>Ingresa tu Contraseña</label>
                             </div>
@@ -50,8 +50,8 @@
                             </p>                  
                         </div>
                     </form>
-                    <form action="login.php" autocomplete="off" 
-                        class="registroformulario">
+                    <form action="insertar.php" autocomplete="off" 
+                        class="registroformulario" method="POST">
                         <div class="logo">
                             <img src="Logouni.png" alt="alertas">
                             <h4>Gestor de alertas</h4>
@@ -64,10 +64,10 @@
                         </div>                         
                         <div class="formularioactual">
                             <div class="entrada-wrap">
-                                <input type="text" 
-                                minlength="4" 
+                                <input type="text"
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="nombre"
                                 require/>
                                 <label>Ingresa tu Nombre</label>
                             </div>
@@ -76,20 +76,22 @@
                                 minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="apellido"
                                 require/>
                                 <label>Ingresa tu Apellido</label>
                             </div>
-                            <select class="entrada-wrap" name="select" id="tipoid">
-                            <option value="value0">Tipo Identificación</option>
-                            <option value="value1">Cedula Ciudadania</option>
-                            <option value="value2">Pasaporte</option>
-                            <option value="value3">Rut</option>
+                            <select class="entrada-wrap" name="selecttipoid" >
+                            <option value="0">Tipo Identificación</option>
+                            <option value="1">Cedula Ciudadania</option>
+                            <option value="2">Pasaporte</option>
+                            <option value="3">Rut</option>
                             </select>
                             <div class="entrada-wrap">
                                 <input type="number" 
                                 minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="identificacionn"
                                 require/>
                                 <label>Ingresa tu Identificación</label>
                             </div>
@@ -98,29 +100,41 @@
                                 minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="edad"
                                 require/>
                                 <label>Ingresa tu edad</label>
                             </div>
                             <div class="entrada-wrap">
-                                <input type="number" 
+                                <input type="text" 
                                 minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="telefono"
                                 require/>
                                 <label>Ingresa tu numero telefonico</label>
                             </div>
                             <div class="entrada-wrap">
-                                <input type="password" 
+                                <input type="text" 
                                 minlength="4" 
                                 class="entradasform"
                                 autocomplete="off" 
+                                name="email"
+                                require/>
+                                <label>Ingresa tu numero correo electronico</label>
+                            </div>
+                            <div class="entrada-wrap">
+                                <input type="text" 
+                                minlength="4" 
+                                class="entradasform"
+                                autocomplete="off" 
+                                name="pass"
                                 require/>
                                 <label>Ingresa tu contraseña</label>
                             </div>
-                            <select class="entrada-wrap" name="select" id="tiporol">
-                            <option value="value0">Selecciona tu Rol</option>
-                            <option value="value1">Veterinario</option>
-                            <option value="value2">Propietario</option>
+                            <select class="entrada-wrap" name="selectrol" id="tiporol">
+                            <option value="0">Selecciona tu Rol</option>
+                            <option value="1">Veterinario</option>
+                            <option value="2">Propietario</option>
                             </select>                            
                             <input type="submit" value="Sing In" class="btningreso"/>
                             <p class="text">
