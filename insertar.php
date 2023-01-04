@@ -1,5 +1,5 @@
 <?php
-require 'conedb.php';
+require 'conexionphpazure.php';
 
 $idusuario = $_POST['identificacionn'];
 $nameuser = $_POST['nombre'];
