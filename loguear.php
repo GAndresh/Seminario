@@ -1,5 +1,5 @@
 <?php
-require 'conedb.php';
+require './SSL/conexionphpazure.php';
 session_start();
 
 $id = $_POST['identificacion'];
