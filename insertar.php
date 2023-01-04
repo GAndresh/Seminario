@@ -17,7 +17,7 @@ $insertar = "insert into usuario (idUsuario, nombreUsuario, apellidoUsuario, eda
  $query = mysqli_query($conexion, $insertar);
 
  if($query){
-    header("location:login.php");
+    header("location:index.php");
  }else{
     echo "incorrecto";
  }

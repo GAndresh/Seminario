@@ -4,7 +4,7 @@ session_start();
 $usuario = $_SESSION['username'];
 
 if(!isset($usuario)){
-    header("location: login.php");
+    header("location: index.php");
 }else{
     echo "<h1> Hola $usuario </h1>";
 
