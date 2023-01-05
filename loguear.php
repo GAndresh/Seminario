@@ -13,7 +13,7 @@ $array = mysqli_fetch_array($consulta);
 if($array['contar']>0){
     $nameis = $array['elname'];    
     $_SESSION['username'] = $nameis;    
-    header("location:./dashboard/dashboard.php");
+    header("location:./dashboard/nuevodashboard.php");
 }else{
     echo "datos no encontrados";
 }

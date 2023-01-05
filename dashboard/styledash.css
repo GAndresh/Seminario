@@ -4,10 +4,10 @@
 /* VARIABLES */
 
 :root {
-    --blanco: #E0E0E0;
+    --blanco: #007b00;
     --azul-opacidad: #007b00;
     --bg-menu: #007b00;
-    --bg-body: #C7E1FF;
+    --bg-body: #007b00;
 }
 
 /* GENERALES */
@@ -28,6 +28,8 @@ body {
     color: white;
     font-family: 'Quicksand', sans-serif;
 }
+
+
 
 /* LAYOUT */
 

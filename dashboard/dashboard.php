@@ -26,8 +26,25 @@
     <!-- CUSTOM JS -->
     <script src="dashactions.js" defer></script>
  </head>
-<body>
+
+ <style>
    
+    
+
+    .imagen{
+    position: absolute;
+    top: 0;
+    margin-top:80px;
+    margin-left: 200px;
+    width: 1600px;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: #ffffff;
+}
+ </style>
+<body>
     <div class="menu-dashboard">
         <!-- TOP MENU -->
         <div class="top-menu">
@@ -99,9 +116,15 @@
                 </a>
                 
             </div>
+
+            <div class="imagendiv">
+                 <img class="imagen" src="fondoprincipal.jpg" alt="prueba de fondo">
+        
+            </div>
         </div>
     </div>
 
+   
     
 </body>
 </html>
