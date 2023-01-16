@@ -48,18 +48,16 @@
             </div>            
             <form action="guardarimagen.php" class="formpredio" method="POST" enctype="multipart/form-data">
                 <div class="espaciofoto">
-                    <div class="foto" >
-                      
+                    <div class="foto" >                      
                     </div>                    
                 </div>
 
                 <div class="botoncargafoto">
                     <input type="file" name="findfoto" class="findfoto">
-                </div>
-
-               <div class="ingresarganado">
-                <h2 class="titulo">Datos del Predio</h2>
-                    <form action="" class="ingresarbovinos">
+                </div>          
+                
+                    <div class="ingresodeganado">                   
+                    <h2 class="titulo">DATOS DEL PREDIO</h2>
                         <label for="">Terneras Menores 1 año</label>
                         <input type="text">
                         <label for="">Terneros Menores 1 año</label>
@@ -75,12 +73,12 @@
                         <label for="">Hembras Mayores 3 años</label>
                         <input type="text">
                         <label for="">Machos Mayores 3 años</label>
-                        <input type="text">                  
-               </div>
-
+                        <input type="text">   
+                    </div>               
+              
                 <div class="insertarpre">
                      <br>
-                     <h1>Perfil Ganadero</h1>   
+                     <h1>PERFIL GANADERO</h1>   
                      <br>
                     <label for="">Digita la identificación de tu predio:</label>
                     <input type="number" class="inputs" id="idPredio">
