@@ -56,5 +56,5 @@ jobs:
         with:
           app-name: 'ganaderophp'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_71C8AEA2229342B7B68A79951177EC02 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_146EB88D13B54E5E956B48365D1C5B6D }}
           package: .
