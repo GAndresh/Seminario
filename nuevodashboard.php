@@ -1,30 +1,16 @@
 <?php
+    
     session_start();
-    error_reporting(0);
-    $varsesion = $_SESSION['username'];
-
+    error_reporting(0); 
+    
+    $varsesion = $_SESSION['username'];   
+    $varsesion2 = $_SESSION['ide'];
+    
+    
     if($varsesion == null || $varsesion = ''){
         echo 'Debes iniciar sesión para entrar aqui';
         die();
-    }
-
-    /*if(isset($_POST["upexcel"])){
-       require_once('../conexionphpazure.php');
-       require_once('cargarexcel.php');
-
-       $archivos = $_FILES['excelanalitycs']['name'];
-       $archivocopiado = $_FILES["excelanalitycs"]["tmp_name"];
-       $archivo_guardado = "copia_".$archivos;
-
-       echo $archivos."esta en ruta temporal: " .$archivocopiado;
-
-       if(copy($archivocopiado , $archivo_guardado)){
-        echo "copiado con exito";
-       }else {
-        echo "error en guardar";
-       }
-    }*/
-?>
+    }?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,9 +25,7 @@
 <body>
 	<header>
         <nav class="nav">
-            <div class="logo"> 
-                <h1 class="label">Bienvenido </br> <?php echo $_SESSION['username']?></h1>
-            </div>
+           
             <ul class = "menu">
                     <li><a href="javascript:abrirperfil()">Perfil</a></li> 
                     <li><a href="javascript:veranalitycs()">Datos Estadisticos</a></li>
@@ -58,8 +42,74 @@
     <div class="ventana1" id="perfil">
         <div id="cerrarw">
             <a href="javascript:cerrar()"><img class ="cerrarw" src="cerrar-ventana.png"></a>
-       </div>
-        <h1>perfil</h1>
+       </div>             
+       <div class="logo"> 
+                <h3 class="label">Bienvenido <?php echo $_SESSION['username']?></h3>
+            </div>            
+            <form action="guardarimagen.php" class="formpredio" method="POST" enctype="multipart/form-data">
+                <div class="espaciofoto">
+                    <div class="foto" >
+                      
+                    </div>                    
+                </div>
+
+                <div class="botoncargafoto">
+                    <input type="file" name="findfoto" class="findfoto">
+                </div>
+
+               <div class="ingresarganado">
+                <h2 class="titulo">Datos del Predio</h2>
+                    <form action="" class="ingresarbovinos">
+                        <label for="">Terneras Menores 1 año</label>
+                        <input type="text">
+                        <label for="">Terneros Menores 1 año</label>
+                        <input type="text">
+                        <label for="">Hembras 1 - 2 años</label>
+                        <input type="text">
+                        <label for="">Machos 1 - 2 años</label>
+                        <input type="text">
+                        <label for="">Hembras 2 - 3 años</label>
+                        <input type="text">
+                        <label for="">Machos 2 - 3 años</label>
+                        <input type="text">
+                        <label for="">Hembras Mayores 3 años</label>
+                        <input type="text">
+                        <label for="">Machos Mayores 3 años</label>
+                        <input type="text">                  
+               </div>
+
+                <div class="insertarpre">
+                     <br>
+                     <h1>Perfil Ganadero</h1>   
+                     <br>
+                    <label for="">Digita la identificación de tu predio:</label>
+                    <input type="number" class="inputs" id="idPredio">
+                    <label for="">Digita el nombre de tu predio:</label>
+                    <input type="text" class="inputs" id="nombrePredio">
+                    <label for="">Digita la vereda de tu predio:</label>
+                    <input type="text" class="inputs" id="NombreVereda">
+                    <label for="">Digita la marca de tu predio:</label>
+                    <input type="text" class="inputs" id="marcaPredio">
+                    <label for="">Selecciona el municipio del predio:</label>
+                    <select class="inputs">                        
+                        <?php
+                            include 'conexionphpazure.php';
+                            $consulta="select * from municipio";
+                            $ejecutar= mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+                        ?>
+                        <?php
+                            foreach ($ejecutar as $opciones):  ?>
+                            <option value="<?php echo $opciones['nombreMunicipio'] ?>">
+                            <?php echo $opciones['nombreMunicipio']?>
+                            </option>
+                        <?php  endforeach ?>                          
+                    </select>
+                       <br>
+                       <br>
+                </div>
+
+               
+            </form> 
     </div>
     <div class="ventana1" id="mensajes">
         <div id="cerrarw">
@@ -67,23 +117,22 @@
         </div>
             <div class="grafica">
                 <BR></BR>
-                <h1>DATOS PROYECTADOS 2023</h1>
+                <!--<h1>DATOS PROYECTADOS 2023</h1>-->
                 <BR></BR>
-            <iframe title="total" width="1140" height="720" src="https://app.powerbi.com/reportEmbed?reportId=f3d331e7-79f7-47a3-a3a3-86482b3f79c6&autoAuth=true&ctid=64ebc78e-0a5f-44e1-a504-5713eff64b33" frameborder="0" allowFullScreen="true"></iframe>
-
-            </div>        
+                <iframe title="total" width="1140" height="620" src="https://app.powerbi.com/reportEmbed?reportId=f3d331e7-79f7-47a3-a3a3-86482b3f79c6&autoAuth=true&ctid=64ebc78e-0a5f-44e1-a504-5713eff64b33" frameborder="0" allowFullScreen="true"></iframe>
+                </div>        
     </div>        
     <div class="ventana1" id="analitycs">
         <div id="cerrarw">
             
             <a href="javascript:cerrar()"><img class ="cerrarw" src="cerrar-ventana.png"></a>       
         </div>
-        <h1>Datos Nacionales</h1>
+        <!--<h1>Datos Nacionales</h1>-->
         <div class="tabla">
             <div class="wrapper">
-                <table  id="mitabla"  class="tablainformacion" style="width:100%">
+                <table  id="mitabla" class="tablainformacion" style="width:98%">
             <thead>
-                    <tr>
+                    <tr class="th">
                         <th>Departamento</th>
                         <th>Municipio</th>
                         <th>Codigo</th>
