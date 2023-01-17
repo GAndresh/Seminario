@@ -63,15 +63,22 @@
                 
                     <div class="ingresodeganado">                   
                     <h1 class="titulo">DATOS DEL PREDIO</h1>
-                        
-                        <input type="text" class="inputs" placeholder="Terneras Menores 1 año">                       
-                        <input type="text" class="inputs" placeholder="Terneros Menores 1 año">                        
-                        <input type="text" class="inputs" placeholder="Hembras 1 - 2 año">
-                        <input type="text" class="inputs" placeholder="Machos 1 - 2 años">
-                        <input type="text" class="inputs" placeholder="Hembras 2 - 3 años">
-                        <input type="text" class="inputs" placeholder="Machos 2 - 3 años">
-                        <input type="text" class="inputs" placeholder="Hembras Mayores 3 años">
-                        <input type="text" class="inputs" placeholder="Machos Mayores 3 años">   
+                        <label for="">Terneras Menores 1 año</label>
+                        <input type="text" class="inputs" placeholder="">              
+                        <label for="">Terneros Menores 1 año</label>         
+                        <input type="text" class="inputs" placeholder="">      
+                        <label for="">Hembras 1 - 2 año</label>                  
+                        <input type="text" class="inputs" placeholder="">
+                        <label for=""> Machos 1 - 2 años</label>
+                        <input type="text" class="inputs" placeholder="">
+                        <label for="">Hembras 2 - 3 años</label>
+                        <input type="text" class="inputs" placeholder="">
+                        <label for="">Machos 2 - 3 años</label>
+                        <input type="text" class="inputs" placeholder="">
+                        <label for="">Hembras Mayores 3 años</label>
+                        <input type="text" class="inputs" placeholder="">
+                        <label for="">Machos Mayores 3 años</label>
+                        <input type="text" class="inputs" placeholder="">   
                         
                     </div>               
               

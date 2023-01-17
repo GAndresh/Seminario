@@ -126,7 +126,7 @@ header{
     font-size: 30px;
     border: solid 1px black;
     position: absolute;
-    width: 1044px;
+    width: 1050px;
     top: 10%;
     left: 5%;
 }
@@ -285,6 +285,7 @@ label{
     margin-bottom: 10px;
     font-weight: bold;
     padding: 10px;
+    margin-bottom: -10px;
 }
 
 
