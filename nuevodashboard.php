@@ -64,55 +64,52 @@
                     <div class="ingresodeganado">                   
                     <h1 class="titulo">DATOS DEL PREDIO</h1>
                         <label for="">Terneras Menores 1 año</label>
-                        <input type="text" class="inputs" placeholder="">              
+                        <input type="text" class="inputs" required>              
                         <label for="">Terneros Menores 1 año</label>         
-                        <input type="text" class="inputs" placeholder="">      
+                        <input type="text" class="inputs" required>      
                         <label for="">Hembras 1 - 2 año</label>                  
-                        <input type="text" class="inputs" placeholder="">
+                        <input type="text" class="inputs" required>
                         <label for=""> Machos 1 - 2 años</label>
-                        <input type="text" class="inputs" placeholder="">
+                        <input type="text" class="inputs" required>
                         <label for="">Hembras 2 - 3 años</label>
-                        <input type="text" class="inputs" placeholder="">
+                        <input type="text" class="inputs" required>
                         <label for="">Machos 2 - 3 años</label>
-                        <input type="text" class="inputs" placeholder="">
+                        <input type="text" class="inputs" required>
                         <label for="">Hembras Mayores 3 años</label>
-                        <input type="text" class="inputs" placeholder="">
+                        <input type="text" class="inputs" required>
                         <label for="">Machos Mayores 3 años</label>
-                        <input type="text" class="inputs" placeholder="">   
-                        
+                        <input type="text" class="inputs" required>  
                     </div>               
-              
-                <div class="insertarpre">
-                     <br>
-                     <h1>PERFIL GANADERO</h1>   
-                     <br>
-                    <label for="">Digita la identificación de tu predio:</label>
-                    <input type="number" class="inputs" id="idPredio">
-                    <label for="">Digita el nombre de tu predio:</label>
-                    <input type="text" class="inputs" id="nombrePredio">
-                    <label for="">Digita la vereda de tu predio:</label>
-                    <input type="text" class="inputs" id="NombreVereda">
-                    <label for="">Digita la marca de tu predio:</label>
-                    <input type="text" class="inputs" id="marcaPredio">
-                    <label for="">Selecciona el municipio del predio:</label>
-                    <select class="inputs">                        
-                        <?php
-                            include 'conexionphpazure.php';
-                            $consulta="select * from municipio";
-                            $ejecutar= mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
-                        ?>
-                        <?php
-                            foreach ($ejecutar as $opciones):  ?>
-                            <option value="<?php echo $opciones['nombreMunicipio'] ?>">
-                            <?php echo $opciones['nombreMunicipio']?>
-                            </option>
-                        <?php  endforeach ?>                          
-                    </select>
-                       <br>
-                       <br>
-                </div>
-
-               
+                    <div class="insertarpre">
+                        <br>
+                        <h1>PERFIL GANADERO</h1>   
+                        <br>
+                        <label for="">Digita la identificación de tu predio:</label>
+                        <input type="number" class="inputs" id="idPredio" required>
+                        <label for="">Digita el nombre de tu predio:</label>
+                        <input type="text" class="inputs" id="nombrePredio" required>
+                        <label for="">Digita la vereda de tu predio:</label>
+                        <input type="text" class="inputs" id="NombreVereda" required>
+                        <label for="">Digita la marca de tu predio:</label>
+                        <input type="text" class="inputs" id="marcaPredio" required>
+                        <label for="">Selecciona el municipio del predio:</label>
+                        <select class="inputs" required>                        
+                            <?php
+                                include 'conexionphpazure.php';
+                                $consulta="select * from municipio";
+                                $ejecutar= mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+                            ?>
+                            <?php
+                                foreach ($ejecutar as $opciones):  ?>
+                                <option value="<?php echo $opciones['nombreMunicipio'] ?>">
+                                <?php echo $opciones['nombreMunicipio']?>
+                                </option>
+                            <?php  endforeach ?>                          
+                        </select>
+                        <br>
+                        <br>
+                    </div>
+                    <button type="submit" class="button">Guardar Datos</button>    
             </form> 
     </div>
     <div class="ventana1" id="mensajes">
@@ -168,16 +165,14 @@
                         <td><?php echo $mostrar['mmayores']?></td>
                         <td><?php echo $mostrar['hembrasadultas']?></td>
                         <td><?php echo $mostrar['machosadultos']?></td>
-                        <td><?php echo $mostrar['total']?></td>
-                        
-                     
+                        <td><?php echo $mostrar['total']?></td>                        
                     </tr>
                     <?php } ?>
                 </thead>
-            </table>
-          
+            </table>          
             </div>            
-        </div>        
+        </div>  
+        
     </div>
     <div class="ventana1" id="ruv">
         <div id="cerrarw">
