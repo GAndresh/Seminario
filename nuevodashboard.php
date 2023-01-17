@@ -49,7 +49,7 @@
             <form action="guardarimagen.php" class="formpredio" method="POST" enctype="multipart/form-data">
                 <div class="username">
                     <label >Bienvenido <?php echo $_SESSION['username']?></label>
-                    <label>Identificación <?php echo $_SESSION['ide']?></label>
+                    <label>Identificación: <?php echo $_SESSION['ide']?></label>
                 </div>
                 
                 <div class="espaciofoto">
