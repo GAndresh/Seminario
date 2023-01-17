@@ -25,8 +25,7 @@
 
 <body>
 	<header>
-        <nav class="nav">
-           
+        <nav class="nav">           
             <ul class = "menu">
                     <li><a href="javascript:abrirperfil()">Perfil</a></li> 
                     <li><a href="javascript:veranalitycs()">Datos Estadisticos</a></li>
@@ -49,63 +48,81 @@
             </div>            -->
             <form action="guardarimagen.php" class="formpredio" method="POST" enctype="multipart/form-data">
                 <div class="username">
-                    <label >Bienvenido <?php echo $_SESSION['username']." ".$_SESSION['apellido']?></label>
+                    <label>Bienvenido <?php echo $_SESSION['username']." ".$_SESSION['apellido']?></label>
                     <label>Identificación: <?php echo $_SESSION['ide']?></label>
                 </div>
                 
                 <div class="espaciofoto">
-                    <div class="foto" >                      
-                    </div>                    
-                </div>
+                    <table>
+                        <tr>
+                           
+                        </tr>
+                        <?php  
+                            include 'conexionphpazure.php';
+                            $queryimg = mysqli_query($conexion, "select fotopredio from Predio where fkusuariopredio = '$varsesion2'");
+                            $imgis = mysqli_num_rows($queryimg);
+                            if($imgis>0){
+                                while($data = mysqli_fetch_array($queryimg)){
+                                    ?>
+                                    <tr>
+                                        <img src="data:image/jpg;base64, <?php echo base64_encode($data['fotopredio'])?>" class="foto">                      
+                                    </tr>
+                                <?php }
+                            }
+                        ?>                          
+                    </table>
+                  </div>
 
                 <div class="botoncargafoto">
-                    <input type="file" name="findfoto" class="findfoto">
+                    <input type="file" name="findfoto" class="findfoto" required>
                 </div>          
                 
                     <div class="ingresodeganado">                   
                     <h1 class="titulo">DATOS DEL PREDIO</h1>
                         <label for="">Terneras Menores 1 año</label>
-                        <input type="text" class="inputs" required>              
+                        <input type="text" class="inputs" name="terneras1" required>              
                         <label for="">Terneros Menores 1 año</label>         
-                        <input type="text" class="inputs" required>      
+                        <input type="text" class="inputs" name="terneros1" required>      
                         <label for="">Hembras 1 - 2 año</label>                  
-                        <input type="text" class="inputs" required>
+                        <input type="text" class="inputs" name="hembras1" required>
                         <label for=""> Machos 1 - 2 años</label>
-                        <input type="text" class="inputs" required>
+                        <input type="text" class="inputs" name="machos1" required>
                         <label for="">Hembras 2 - 3 años</label>
-                        <input type="text" class="inputs" required>
+                        <input type="text" class="inputs" name="hembras2" required>
                         <label for="">Machos 2 - 3 años</label>
-                        <input type="text" class="inputs" required>
+                        <input type="text" class="inputs" name="machos2" required>
                         <label for="">Hembras Mayores 3 años</label>
-                        <input type="text" class="inputs" required>
+                        <input type="text" class="inputs" name="hembras3" required>
                         <label for="">Machos Mayores 3 años</label>
-                        <input type="text" class="inputs" required>  
-                    </div>               
+                        <input type="text" class="inputs" name="machos3" required>  
+                        <label for="">Año de carga</label>
+                        <input type="text" class="inputs" name="anho1" required>  
+                        <label for="">Identificacion dueño</label>
+                        <input type="label" name="ide" class="inputs"></input>
+                    </div>            
+
                     <div class="insertarpre">
                         <br>
                         <h1>PERFIL GANADERO</h1>   
                         <br>
                         <label for="">Digita la identificación de tu predio:</label>
-                        <input type="number" class="inputs" id="idPredio" required>
+                        <input type="number" class="inputs" name="idPredio" required>
                         <label for="">Digita el nombre de tu predio:</label>
-                        <input type="text" class="inputs" id="nombrePredio" required>
+                        <input type="text" class="inputs" name="nombrePredio" required>
                         <label for="">Digita la vereda de tu predio:</label>
-                        <input type="text" class="inputs" id="NombreVereda" required>
+                        <input type="text" class="inputs" name="NombreVereda" required>
                         <label for="">Digita la marca de tu predio:</label>
-                        <input type="text" class="inputs" id="marcaPredio" required>
+                        <input type="text" class="inputs" name="marcaPredio" required>
                         <label for="">Selecciona el municipio del predio:</label>
-                        <select class="inputs" required>                        
-                            <?php
-                                include 'conexionphpazure.php';
-                                $consulta="select * from municipio";
-                                $ejecutar= mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
-                            ?>
-                            <?php
-                                foreach ($ejecutar as $opciones):  ?>
-                                <option value="<?php echo $opciones['nombreMunicipio'] ?>">
-                                <?php echo $opciones['nombreMunicipio']?>
-                                </option>
-                            <?php  endforeach ?>                          
+                        <select class="inputs" name="municipiois" required>   
+                            <option value="0">Selecciona el Municipio</option>
+                            <option value="1">Florencia</option>
+                            <option value="2">Doncello</option>  
+                            <option value="3">Albania</option>
+                            <option value="4">Cartagena del Chairá</option>
+                            <option value="5">Paujil</option>  
+                            <option value="6">San Vicente</option> 
+                            <option value="7">Puerto Rico</option> 
                         </select>
                         <br>
                         <br>
