@@ -109,7 +109,7 @@
                         <br>
                         <br>
                     </div>
-                    <button type="submit" class="button">Guardar Datos</button>    
+                    <button type="submit" class="button">Guardar</button>    
             </form> 
     </div>
     <div class="ventana1" id="mensajes">
