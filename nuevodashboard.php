@@ -43,10 +43,15 @@
         <div id="cerrarw">
             <a href="javascript:cerrar()"><img class ="cerrarw" src="cerrar-ventana.png"></a>
        </div>             
-       <div class="logo"> 
+       <!--<div class="logo"> 
                 <h3 class="label">Bienvenido <?php echo $_SESSION['username']?></h3>
-            </div>            
+            </div>            -->
             <form action="guardarimagen.php" class="formpredio" method="POST" enctype="multipart/form-data">
+                <div class="username">
+                    <label >Bienvenido <?php echo $_SESSION['username']?></label>
+                    <label>Identificación <?php echo $_SESSION['ide']?></label>
+                </div>
+                
                 <div class="espaciofoto">
                     <div class="foto" >                      
                     </div>                    
@@ -57,23 +62,17 @@
                 </div>          
                 
                     <div class="ingresodeganado">                   
-                    <h2 class="titulo">DATOS DEL PREDIO</h2>
-                        <label for="">Terneras Menores 1 año</label>
-                        <input type="text">
-                        <label for="">Terneros Menores 1 año</label>
-                        <input type="text">
-                        <label for="">Hembras 1 - 2 años</label>
-                        <input type="text">
-                        <label for="">Machos 1 - 2 años</label>
-                        <input type="text">
-                        <label for="">Hembras 2 - 3 años</label>
-                        <input type="text">
-                        <label for="">Machos 2 - 3 años</label>
-                        <input type="text">
-                        <label for="">Hembras Mayores 3 años</label>
-                        <input type="text">
-                        <label for="">Machos Mayores 3 años</label>
-                        <input type="text">   
+                    <h1 class="titulo">DATOS DEL PREDIO</h1>
+                        
+                        <input type="text" class="inputs" placeholder="Terneras Menores 1 año">                       
+                        <input type="text" class="inputs" placeholder="Terneros Menores 1 año">                        
+                        <input type="text" class="inputs" placeholder="Hembras 1 - 2 año">
+                        <input type="text" class="inputs" placeholder="Machos 1 - 2 años">
+                        <input type="text" class="inputs" placeholder="Hembras 2 - 3 años">
+                        <input type="text" class="inputs" placeholder="Machos 2 - 3 años">
+                        <input type="text" class="inputs" placeholder="Hembras Mayores 3 años">
+                        <input type="text" class="inputs" placeholder="Machos Mayores 3 años">   
+                        
                     </div>               
               
                 <div class="insertarpre">
