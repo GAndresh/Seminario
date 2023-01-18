@@ -185,9 +185,20 @@ img.cerrarw{
     align-items: center;
 }
 
+.th3{
+    position: absolute;
+    background-color: #246355;
+    border-bottom: solid 5px #0f362d;
+    color: white;
+    top:  10%;
+    font-size: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
 th, td{
     border: solid 1px black;
-    padding: 10px;
+    padding: 5px;
 }
 
 tr:hover td{

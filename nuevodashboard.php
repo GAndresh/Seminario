@@ -74,7 +74,7 @@
                   </div>
 
                 <div class="botoncargafoto">
-                    <input type="file" name="findfoto" class="findfoto" required>
+                    <input type="file" name="findfoto" class="findfoto">
                 </div>          
                 
                     <div class="ingresodeganado">                   
@@ -150,7 +150,7 @@
         <div class="tabla">
             <div class="wrapper">
                 <table  id="mitabla" class="tablainformacion" style="width:98%">
-            <thead>
+                    <thead>
                     <tr class="th">
                         <th>Departamento</th>
                         <th>Municipio</th>
@@ -196,7 +196,23 @@
         <div id="cerrarw">
             <a href="javascript:cerrar()"><img class ="cerrarw" src="cerrar-ventana.png"></a>
         </div>
-        <h1>ruv</h1>
+        <table>
+        <tr class="th3">
+                        <th>Identificación Predio</th>
+                        <th>Nombre del predio</th>
+                        <th>Nombre de la Vereda</th>
+                        <th>Marca del predio </th>
+                        <th>Terneras Menores 1 año</th>
+                        <th>Terneros Menores 1 año</th>
+                        <th>Hembras 1 - 2 años</th>
+                        <th>Machos 1 - 2 años</th>
+                        <th>Hembras 2 - 3 años</th>
+                        <th>Machos 2 - 3 años</th>
+                        <th>Hembras Mayores 3 años</th>
+                        <th>Machos Mayores 3 años</th>
+                        <th>Año</th>
+                    </tr>
+        </table>
     </div>
     <div class="ventana1" id="citas">
         <div id="cerrarw">
