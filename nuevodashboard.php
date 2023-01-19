@@ -199,6 +199,7 @@
         <form action="actualizarruv.php" method="POST" class="tablaruv">
         <div class="wrapper">
                 <table  id="mitabla" class="tablainformacion" style="width:98%">
+                 <label class="labelruv">TUS PREDIOS REGISTRADOS</label>  
                     <thead>
                     <tr class="th">
                         <th>Identificación Predio</th>
@@ -245,7 +246,7 @@
             </table>          
 
             <div class="enviarinfo">
-                <label class="labelruv">¿Ya Vacunaste? Ingresa aqui tu RUV: </label>  
+                 <label class="labelruv">¿Ya Vacunaste? Ingresa aqui tu RUV: </label>  
                  <input type="text" name="ruv" class="inputruv" placeholder="Digita tu RUV">   
                  <input type="text" class="inputruv" placeholder="Digita el Id del predio">  
                  <input type="text" class="inputruv" name="ide" placeholder="Identificación del propietario">  
