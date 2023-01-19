@@ -27,12 +27,12 @@
 	<header>
         <nav class="nav">           
             <ul class = "menu">
-                    <li><a href="javascript:abrirperfil()">Perfil</a></li> 
-                    <li><a href="javascript:veranalitycs()">Datos Estadisticos</a></li>
-                    <li><a href="javascript:mostrarmensajes()">Dashboard</a></li>                      
-                    <li><a href="javascript:cargarruv()">Cargar Ruv</a></li> 
-                    <li><a href="javascript:pedircita()">Pedir Cita</a></li>	
-                    <li><a href="./salir.php">Cerrar Sesión</a></li> 
+                    <li><a href="javascript:abrirperfil()">Perfil   </a></li> 
+                    <li><a href="javascript:veranalitycs()">Datos Estadisticos   </a></li>
+                    <li><a href="javascript:mostrarmensajes()">Dashboard   </a></li>                      
+                    <li><a href="javascript:cargarruv()">Cargar Ruv   </a></li> 
+                    <!--<li><a href="javascript:pedircita()">Pedir Cita</a></li>	-->
+                    <li><a href="./salir.php">Cerrar Sesión   </a></li> 
                 </ul> 
         </nav>
     </header>
@@ -127,7 +127,7 @@
                         <br>
                         <br>
                     </div>
-                    <button type="submit" class="button">Guardar</button>    
+                    <button type="submit" class="button" onClick="window.alert('Inventario Guardado');">Guardar</button>    
             </form> 
     </div>
     <div class="ventana1" id="mensajes">
@@ -196,8 +196,11 @@
         <div id="cerrarw">
             <a href="javascript:cerrar()"><img class ="cerrarw" src="cerrar-ventana.png"></a>
         </div>
-        <table>
-        <tr class="th3">
+        <form action="actualizarruv.php" method="POST" class="tablaruv">
+        <div class="wrapper">
+                <table  id="mitabla" class="tablainformacion" style="width:98%">
+                    <thead>
+                    <tr class="th">
                         <th>Identificación Predio</th>
                         <th>Nombre del predio</th>
                         <th>Nombre de la Vereda</th>
@@ -211,9 +214,50 @@
                         <th>Hembras Mayores 3 años</th>
                         <th>Machos Mayores 3 años</th>
                         <th>Año</th>
-                    </tr>
-        </table>
+                        <th>Registro V</th>    
+                        <th>Cita   </th>  
+                    <?php
+                           include 'conexionphpazure.php';
+                           $sqlpredio="select * from Predio where fkusuariopredio = '$varsesion2'";
+                           $resultpredio=mysqli_query($conexion, $sqlpredio);
+                           while($mostrarpredio=mysqli_fetch_array($resultpredio)){
+                    ?>
+                    <tr>
+                        <td><?php echo $mostrarpredio['idPredio']?></td>
+                        <td><?php echo $mostrarpredio['nombrePredio']?></td>
+                        <td><?php echo $mostrarpredio['nombreVereda']?></td>
+                        <td><?php echo $mostrarpredio['marcaPredio']?></td>
+                        <td><?php echo $mostrarpredio['terneras']?></td>
+                        <td><?php echo $mostrarpredio['terneros']?></td>
+                        <td><?php echo $mostrarpredio['hembras']?></td>
+                        <td><?php echo $mostrarpredio['machos']?></td>
+                        <td><?php echo $mostrarpredio['hmayores']?></td>
+                        <td><?php echo $mostrarpredio['mmayores']?></td>
+                        <td><?php echo $mostrarpredio['hembrasadultas']?></td>
+                        <td><?php echo $mostrarpredio['machosadultos']?></td>
+                        <td><?php echo $mostrarpredio['anho']?></td>
+                        <td><?php echo $mostrarpredio['ruv']?></td>    
+                        <td><button type="button" class="botoncita" value="saludo" onClick="window.alert('Su cita a sido agendada, revisa tu correo electronico registrado');"> Cita   </button></td>                      
+                    </tr>                   
+                
+                    <?php } ?>
+                </thead>
+            </table>          
+
+            <div class="enviarinfo">
+                <label class="labelruv">¿Ya Vacunaste? Ingresa aqui tu RUV: </label>  
+                 <input type="text" name="ruv" class="inputruv" placeholder="Digita tu RUV">   
+                 <input type="text" class="inputruv" placeholder="Digita el Id del predio">  
+                 <input type="text" class="inputruv" name="ide" placeholder="Identificación del propietario">  
+                 <button type="submit" class="botonruv">Guardar RUV</button>
+                
+            </div>
+                 
+            </div>  
     </div>
+        </form>
+        
+        
     <div class="ventana1" id="citas">
         <div id="cerrarw">
             <a href="javascript:cerrar()"><img class ="cerrarw" src="cerrar-ventana.png"></a>

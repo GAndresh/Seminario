@@ -136,7 +136,7 @@
                             <option value="1">Veterinario</option>
                             <option value="2">Propietario</option>
                             </select>                            
-                            <input type="submit" value="Sing In" class="btningreso"/>
+                            <input type="submit" value="Sing Up" class="btningreso" onClick="window.alert('Registrado exitosamente');"/>
                             <p class="text">
                                 ¿Problemas para iniciar sesión?
                                 <a href="#" >Click aqui</a>    
